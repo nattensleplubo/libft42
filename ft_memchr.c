@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 15:18:49 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/22 02:26:29 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/09/23 01:16:33 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char	*p;
 	unsigned int	i;
-	unsigned char *	p;
-	
-	i = 0;
+
 	p = (unsigned char *)s;
-	while (i <= n)
+	i = 0;
+	while (i < n)
 	{
-			//if ((((unsigned char *)s) [i]) == (((unsigned char *)s)[c])) // wait c normé ca ? a verif sur vim
-			if (p[i] == (unsigned char)c)
-				return ((void *)p + i);
-			i++;
+		if (p[i] == (unsigned char)c)
+			return ((void *)p + i);
+		i++;
 	}
-	return (NULL); 
+	return (NULL);
 }
-// a verif jsp si c bon mais je pense que si
