@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/23 01:45:08 by ngobert          ###   ########.fr       */
+/*   Created: 2021/09/23 01:41:13 by ngobert           #+#    #+#             */
+/*   Updated: 2021/09/23 02:03:59 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
+// Doit allouer la memoire necessaire pour un tableau de nmenmb elements de taille size_t octets et renvoie un pointeur vers la memoire allouee
+// La zone sera remplie avec des zeros ?? (donc des int ???)
+// Si nmemb ou size vaut zero on renvoi soit NULL, soit un pointeur unique??? (wtf???????????)
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_strlen(const char *str);
-int		ft_atoi(const char *str);
-void	*calloc(size_t nmemb, size_t size);
-
-#endif
+void	*calloc(size_t nmemb, size_t size)
+{
+	
+}
