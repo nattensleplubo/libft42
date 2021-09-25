@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 13:42:51 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/25 17:28:28 by ngobert          ###   ########.fr       */
+/*   Created: 2021/09/25 15:29:22 by ngobert           #+#    #+#             */
+/*   Updated: 2021/09/25 17:29:06 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Localise la premiere occurence de c (converti en char) dans la string pointee par s. le \0 est considéré comme partie de la string
-// donc si c est \0, la fonction doit localiser \0
-
-// Elle doit retourner un pointeur sur sur le char localisé ou NULL si le char c n'apparait pas dans la string 
-
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
+	int	i;
+
+	i = ft_strlen(s);
 	if ((char)c == '\0')
 		return ((char *)s);
 	while (*s != '\0')
