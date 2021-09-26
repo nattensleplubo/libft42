@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 19:29:21 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/26 12:50:51 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/09/26 13:01:38 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,4 @@
 void ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, sizeof(c));
-}
-
-int	main(void)
-{
-	ft_putchar_fd('g', 1);
 }
