@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 15:42:35 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/26 15:54:29 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/09/26 15:59:13 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,4 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	else
 		write(fd, &c, 1);
-}
-
-int	main(void)
-{
-	ft_putnbr_fd(-31416, 1);
 }
