@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/26 15:37:53 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/26 15:51:41 by ngobert          ###   ########.fr       */
+/*   Created: 2021/09/26 15:42:35 by ngobert           #+#    #+#             */
+/*   Updated: 2021/09/26 15:52:41 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 
-	c = nb % 10 + '0';
-	if (nb == -2147483648)
+	c = n % 10 + '0';
+	if (n == -2147483648)
 	{
-		ft_putnbr(nb / 10);
-		write(1, "8", 1);
+		ft_putnbr_fd(n / 10, fd);
+		write(fd, "8", 1);
 	}
-	else if (nb < 0)
+	else if (n < 0)
 	{
-		write(1, "-", 1);
-		ft_putnbr(nb * -1);
+		write(fd, "-", 1);
+		ft_putnbr_fd(n * -1, fd);
 	}
-	else if (nb > 9)
+	else if (n > 9)
 	{
-		ft_putnbr(nb / 10);
-		write(1, &c, 1);
+		ft_putnbr_fd(n / 10, fd);
+		write(fd, &c, 1);
 	}
 	else
-		write(1, &c, 1);
+		write(fd, &c, 1);
+}
+
+int	main(void)
+{
+	ft_putnbr_fd(-31416, 1);
 }
