@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 01:41:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/25 18:21:09 by ngobert          ###   ########.fr       */
+/*   Created: 2021/10/06 15:53:11 by ngobert           #+#    #+#             */
+/*   Updated: 2021/10/06 16:09:28 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// Alloue (avec malloc(3)) et retourne une chaine de caractères représentant l’integer reçu en argument. Les nombres négatifs doivent être gérés.
 
-// Doit allouer la memoire necessaire pour un tableau de nmenmb elements de taille size_t octets et renvoie un pointeur vers la memoire allouee
-// La zone sera remplie avec des zeros ?? (donc des int ???)
-// Si nmemb ou size vaut zero on renvoi soit NULL, soit un pointeur unique??? (wtf???????????)
-
-void	*calloc(size_t count, size_t size)
+int		ft_len(int n)
 {
-	sbcmsdb ks kasf asgkjhasdjkhvzsdbvjkhs b vk
+	coide
+}
+
+char	*ft_itoa(int n)
+{
+	char	*dest;
+	
+	dest = (char *)malloc(n + 1);
 }
