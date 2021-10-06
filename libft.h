@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/06 17:54:08 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/06 19:04:16 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 void			*ft_memchr(const void *s, int c, size_t n);
 int 			memcmp(const void *s1, const void *s2, size_t n);
-void		 	*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *s, int c, size_t len);
 void			ft_putchar(char c);
@@ -44,5 +44,6 @@ void			ft_putnbr(int nb);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+char			*ft_strdup(const char *s1);
 
 #endif
