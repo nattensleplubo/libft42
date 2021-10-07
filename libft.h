@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/06 19:04:16 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/07 14:54:08 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 char			*ft_strdup(const char *s1);
+char			*strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
