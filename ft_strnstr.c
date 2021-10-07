@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:51:30 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/07 16:20:53 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/07 16:27:50 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	const char	haystack[] = "Coca de piña";
-	const char	needle[] = "de ";
-	size_t		len = 15;
-
-	printf("Vrai strnstr : %s\nFaux strnstr : %s\n", strnstr(haystack, needle, len), ft_strnstr(haystack, needle, len));
 }
