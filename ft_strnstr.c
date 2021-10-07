@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:51:30 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/07 14:57:46 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/07 15:24:00 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (*needle== '\0')
-	{
+	if (*needle == '\0')
 		return (haystack);
-	}
-	while (haystack[i] != 0)
+	while (haystack[i] != 0 && i <= len)
 	{
 		j = 0;
 		while (needle[j] == haystack[i + j])
@@ -35,5 +33,5 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (needle);
+	return (0);
 }
