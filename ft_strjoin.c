@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 19:47:08 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/09 21:47:04 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/09 21:55:38 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,13 @@ int	ft_len(char const *s)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		str1;
-	int		str2;
 	char	*dest;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	str1 = ft_len(s1);
-	str2 = ft_len(s2);
-	if (!(dest = malloc(sizeof(char) * str1 + str2 + 1)))
+	if (!(dest = malloc(sizeof(char) * ft_len(s1) + ft_len(s2) + 1)))
 		return (NULL);
 	while (s1[i])
 	{
@@ -47,13 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
-}
-
-int main(void)
-{
-	char const	s1[] = "Coucou les ";
-	char const	s2[] = "copains";
-	
-	printf("%s\n", ft_strjoin(s1, s2));
 }
