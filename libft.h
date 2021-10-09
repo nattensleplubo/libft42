@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/09 21:47:21 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/09 22:27:45 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+size_t			ft_strlen(const char *s);
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*calloc(size_t nmemb, size_t size);
@@ -34,7 +35,6 @@ void			ft_putchar(char c);
 void			ft_putstr(char *str);
 char			*ft_strchr(const char *s, int c);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
-int				ft_strlen(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 int				ft_tolower(int c);
@@ -50,5 +50,6 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char			*strnstr(const char *haystack, const char *needle, size_t len);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
 
 #endif
