@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:22:28 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/07 16:50:15 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/09 19:23:58 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_atoi(const char *str)
 {
-	int	atoi;
+	int	el_atoi;
 	int	is_negative;
 	int	i;
 
-	atoi = 0;
+	el_atoi = 0;
 	is_negative = 1;
 	i = 0;
 	while (str[i])
@@ -33,10 +33,10 @@ int	ft_atoi(const char *str)
 		}
 		while (str[i] >= '0' && str[i] <= '9')
 		{
-			atoi = (atoi * 10) + str[i] - 48;
+			el_atoi = (el_atoi * 10) + str[i] - 48;
 			i++;
 		}
-		return (atoi * is_negative);
+		return (el_atoi * is_negative);
 	}
 	return (0);
 }

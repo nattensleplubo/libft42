@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/07 19:01:53 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/09 19:23:17 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 char			*ft_strdup(const char *s1);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char			*strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
