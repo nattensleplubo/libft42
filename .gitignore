@@ -4,3 +4,5 @@ PLAYGROUND.c
 auto.sh
 a.out
 .gitignore
+*.sh
+*.out
