@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 19:20:44 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/09 19:39:16 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/09 19:41:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	return (dest);
-}
-
-int main(void)
-{
-	char const	s[] = "J'adore la bite et la queue";
-
-	printf("%s", ft_substr(s, 3, 5));
 }
