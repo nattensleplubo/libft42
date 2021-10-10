@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:24:13 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/10 01:50:51 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/10 16:55:13 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			**ft_split(char const *s, char c);
 
 #endif
