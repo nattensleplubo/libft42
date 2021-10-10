@@ -6,18 +6,13 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 21:57:00 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/10 16:01:52 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/10 16:09:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Alloue (avec malloc(3)) et retourne une copie de
-la chaine ’s1’, sans les caractères spécifiés
-dans ’set’ au début et à la fin de la chaine de
-caractères.*/
 #include "libft.h"
-#include <string.h>
 
-static int	count_set(char const *s1, char const *set) // POUR LE MALLOC PAS UTILE POUR LA SUITE
+static int	count_set(char const *s1, char const *set)
 {
 	int	i;
 	int	check;
@@ -39,7 +34,7 @@ static int	count_set(char const *s1, char const *set) // POUR LE MALLOC PAS UTIL
 	return (set_count);
 }
 
-static int	is_set(char a, char const *set) // RETURN 1 OU 0 EN FONCTION DE SI LE CHAR DONNE EST UN SET OU NON
+static int	is_set(char a, char const *set)
 {
 	int	i;
 
@@ -53,27 +48,24 @@ static int	is_set(char a, char const *set) // RETURN 1 OU 0 EN FONCTION DE SI LE
 	return (0);
 }
 
-static int	skip_set(char const *s1, char const *set, int start) // Retourne le nombre de sets qui s'enchainent pour les skip
+static int	skip_set(char const *s1, char const *set, int start)
 {
 	int	i;
 	int	j;
 
 	i = start;
-	j = 0;
+	j = 1;
 	while (s1[i])
 	{
 		if (is_set(s1[i + 1], set) == 0 || is_set(s1[i + 1], set) == '\n')
-		{
-			printf("Skipped %d\n", j);
 			return (j);
-		}
 		j++;
 		i++;
 	}
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set) // ENLEVE LES SETS
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*dest;
 	int		i;
@@ -88,7 +80,7 @@ char	*ft_strtrim(char const *s1, char const *set) // ENLEVE LES SETS
 	{
 		if (is_set(s1[i], set))
 		{
-			i += skip_set(s1, set, i) + 1;
+			i += skip_set(s1, set, i);
 		}
 		dest[k] = s1[i];
 		k++;
@@ -101,10 +93,12 @@ char	*ft_strtrim(char const *s1, char const *set) // ENLEVE LES SETS
 
 int main(void)
 {
-	char const	s1[] = "0122333444455555666666777777788888888999999999";
-	char const	set[] = "0192837465";
+	char const	s1[] = "ewgh ewfciuhsfhd iuhdfsuh udifahsb dhf kjhdfsbkjchdskjf bahk";
+	char const	set[] = "poiuytrewq;lkjhgfdsnbvxzm ";
 	
-	printf("%d\n", count_set(s1, set));
-	printf("%zu\n", ft_strlen(s1));
-	printf("%s\n", ft_strtrim(s1, set));
+	printf("Set in char : %d\n", count_set(s1, set));
+	printf("Char len : %zu\n", ft_strlen(s1));
+	printf("Sets : %s\n", set);
+	printf("Untrimmed : %s\n", s1);
+	printf("Trimmed : %s\n", ft_strtrim(s1, set));
 }
