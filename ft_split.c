@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 15:58:30 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:06:48 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**ft_split(char const *s, char c)
 	dest[num_word(s, c)] = NULL;
 	while (s[i])
 	{
-		if (is_c(str[i], c) == 0)
+		if (is_c(s[i], c) == 0)
 		{
 			j = 0;
 			while (is_c(str[i + j], c) == 0 && str[i + j])
