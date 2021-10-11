@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 15:56:36 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/11 15:58:30 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	**ft_split(char const *s, char c)
 	dest = malloc(sizeof(char *) * num_word(s, c) + 1);
 	if (!dest)
 		return (NULL);
-	dest[num_word(str, charset)] = NULL;
-	while (str[i])
+	dest[num_word(s, c)] = NULL;
+	while (s[i])
 	{
-		if (is_c(str[i], charset) == 0)
+		if (is_c(str[i], c) == 0)
 		{
 			j = 0;
-			while (is_c(str[i + j], charset) == 0 && str[i + j])
+			while (is_c(str[i + j], c) == 0 && str[i + j])
 				j++;
 			dest[k] = ft_splitter(&i, str, j);
 			k++;
@@ -41,19 +41,13 @@ char	**ft_split(char const *s, char c)
 	return (dest);
 }
 
-int	is_c(char c, char *charset)
+int	is_c(char c, char charset)
 {
 	int	i;
 
 	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
-		{
-			return (1);
-		}
-		i++;
-	}
+	if (charset == c)
+		return (1);
 	return (0);
 }
 
@@ -85,7 +79,7 @@ int	num_word(char *s, char c)
 	counter = 0;
 	while (s[i])
 	{
-		if (is_c(str[i], c) == 0)
+		if (is_c(s[i], c) == 0)
 		{
 			counter++;
 			while (is_c(s[i], c) == 0 && s[i])
