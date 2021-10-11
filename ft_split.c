@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 16:06:48 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:08:23 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	**ft_split(char const *s, char c)
 		if (is_c(s[i], c) == 0)
 		{
 			j = 0;
-			while (is_c(str[i + j], c) == 0 && str[i + j])
+			while (is_c(s[i + j], c) == 0 && str[i + j])
 				j++;
-			dest[k] = ft_splitter(&i, str, j);
+			dest[k] = ft_splitter(&i, s, j);
 			k++;
 		}
 		else
