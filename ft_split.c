@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 16:10:55 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:13:50 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	is_c(char c, char charset)
 	return (0);
 }
 
-static char	*ft_splitter(int *i, char *str, int size)
+static char	*ft_splitter(int *i, char const *str, int size)
 {
 	int		j;
 	char	*dest;
@@ -41,7 +41,7 @@ static char	*ft_splitter(int *i, char *str, int size)
 	return (dest);
 }
 
-static int	num_word(char *s, char c)
+static int	num_word(char const *s, char c)
 {
 	int	i;
 	int	counter;
@@ -91,7 +91,16 @@ char	**ft_split(char const *s, char c)
 	return (dest);
 }
 
-int	main(void)
+int main(int argc, char **argv)
 {
-	
+  char **test;
+  char  c;
+  c = argv[2][0];
+  test = ft_split(argv[1], c);
+  int  i = 0;
+  while (test[i])
+  {
+    printf("%s\n", test[i]);
+    i++;
+   }
 }
