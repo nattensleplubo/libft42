@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 21:57:00 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/10 18:42:12 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/11 15:56:48 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	dest[j] = '\0';
 	return (dest);
-}
-
-int main(void)
-{
-	char const	s1[] = "!!!failure>>>succes<<<failure!!!";
-	char const	set[] = "failure!";
-	
-	printf("Char len	: %zu\n", ft_strlen(s1));
-	printf("Set in char	: %d\n", skip_beg(s1, set) + skip_end(s1, set));
-	printf("Beginning skip	: %d\n", skip_beg(s1, set));
-	printf("End skip	: %d\n", skip_end(s1, set));
-	printf("Sets		: %s\n", set);
-	printf("Untrimmed	: %s\n", s1);
-	printf("Trimmed		: %s\n", ft_strtrim(s1, set));
 }
