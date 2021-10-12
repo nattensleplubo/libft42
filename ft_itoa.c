@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:53:11 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/12 12:57:36 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/12 13:20:37 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	ft_len(int n)
 {
     int	i;
 	
-    i = (n < 0);
-    if (n == 0)
+	i = (n < 0);
+	if (n == 0)
 		return (1);
     while (n != 0)
     {
@@ -47,12 +47,4 @@ char	*ft_itoa(int n)
         i--;
     }
     return (dest);
-}
-
-int	main(void)
-{
-    int	i;
-
-	i = 42;
-    printf("%s\n", ft_itoa(i));
 }
