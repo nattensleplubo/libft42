@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 15:29:22 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/25 18:11:06 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/12 13:51:51 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int i;
 
-	i = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)s);
-	while (*s != '\0')
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	while (i >= 0)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i--;
 	}
 	return (NULL);
 }
