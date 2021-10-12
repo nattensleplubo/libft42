@@ -6,16 +6,22 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 14:59:57 by ngobert           #+#    #+#             */
-/*   Updated: 2021/09/23 17:00:03 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/12 13:37:24 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// La fonction memcmp() compare les n premiers octets des zones mémoire s1 et s2.
-// Elle renvoie un entier inférieur, égal, ou supérieur à zéro, si s1 est respectivement inférieure, égale ou supérieur à s2.   
-
-int memcmp(const void *s1, const void *s2, size_t n)
+int			ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
+			return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+		i++;
+	}
+	return (0);
 }
