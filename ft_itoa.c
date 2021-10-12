@@ -6,19 +6,19 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:53:11 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/12 12:37:55 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/10/12 12:57:36 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" //Alloue (avec malloc(3)) et retourne une chaine de caractères représentant l’integer reçu en argument. Les nombres négatifs doivent être gérés.
+#include "libft.h"
 
-static int        ft_len(int n)
+static int	ft_len(int n)
 {
     int	i;
-
+	
     i = (n < 0);
     if (n == 0)
-        return (1);
+		return (1);
     while (n != 0)
     {
         n = n / 10;
@@ -27,63 +27,32 @@ static int        ft_len(int n)
     return (i);
 }
 
-char	*ft_itoa_neg(int n, char *dest)
+char	*ft_itoa(int n)
 {
-	char	*dest;
-	long	mod;
-	long	div;
-	int		temp;
-	int		i;
+    char			*dest;
+    int				i;
+    unsigned int	cpy;
 
-	mod = 10;
-	div = 1;
 	i = ft_len(n) - 1;
-	while (i > 0)
-    {
-        temp = (n % mod) / div;
-        dest[i] = temp + 48;
-        mod *= 10;
-        div *= 10;
-        i--;
-    }
-    dest[ft_len(n) + 1] = '\0';
-    return (dest);
-}
-
-char    *ft_itoa(int n)
-{
-    char	*dest;
-    long	mod;
-    long	div;
-    int		temp;
-    int		i;
-    
-    mod = 10;
-    div = 1;
-    i = ft_len(n) - 1;
-    dest = (char *)malloc(sizeof(char) * ft_len(n) + 1);
+    dest = (char *)malloc(sizeof(char) * i + 2);
     if (!dest)
-		return (NULL);
-	if (n < 0)
-	{
-		return (ft_itoa_neg(n, dest));
-	}
-    while (i >= 0)
+        return (NULL);
+    if (n < 0)
+        dest[0] = '-';
+    cpy = n * (1 - (2 * (n < 0)));
+    while (i >= (n < 0))
     {
-        temp = (n % mod) / div;
-        dest[i] = temp + 48;
-        mod *= 10;
-        div *= 10;
+        dest[i] = (cpy % 10) + 48;
+        cpy /= 10;
         i--;
     }
-    dest[ft_len(n)] = '\0';
     return (dest);
 }
 
-int    main(void)
+int	main(void)
 {
     int	i;
 
-	i = -214748;
+	i = 42;
     printf("%s\n", ft_itoa(i));
 }
