@@ -90,17 +90,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (dest);
 }
-
-int main(int argc, char **argv)
-{
-  char **test;
-  char  c;
-  c = argv[2][0];
-  test = ft_split(argv[1], c);
-  int  i = 0;
-  while (test[i])
-  {
-    printf("%s\n", test[i]);
-    i++;
-   }
-}

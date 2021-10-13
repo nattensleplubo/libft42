@@ -30,7 +30,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!(dest = malloc(sizeof(char) * ft_len(s1) + ft_len(s2) + 1)))
+	dest = malloc(sizeof(char) * ft_len(s1) + ft_len(s2) + 1);
+	if (!dest)
 		return (NULL);
 	while (s1[i])
 	{

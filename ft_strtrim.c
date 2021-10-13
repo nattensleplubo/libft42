@@ -43,7 +43,6 @@ static int	skip_end(char const *s1, char const *set)
 
 	i = ft_strlen(s1) - 1;
 	j = 0;
-
 	while (is_set(s1[i], set) == 1)
 	{
 		i--;
@@ -57,7 +56,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*dest;
 	int		i;
 	int		j;
-	
+
 	i = skip_beg(s1, set);
 	j = 0;
 	dest = malloc(ft_strlen(s1) - i - skip_end(s1, set) + 1);
