@@ -6,3 +6,4 @@ a.out
 .gitignore
 *.sh
 *.out
+*.o
