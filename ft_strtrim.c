@@ -71,11 +71,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	dest[j] = '\0';
 	return (dest);
 }
-
-int	main(void)
-{
-	const char	s1[] = "";
-	const char	set[] = "";
-
-	printf("%s\n", ft_strtrim(s1, set));
-}

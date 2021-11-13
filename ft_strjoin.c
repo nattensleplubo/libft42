@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 19:47:08 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/09 21:55:38 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/03 14:42:41 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	dest = malloc(sizeof(char) * ft_len(s1) + ft_len(s2) + 1);
+	dest = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!dest)
 		return (NULL);
 	while (s1[i])
