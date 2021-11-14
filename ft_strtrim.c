@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 21:57:00 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 15:57:10 by ngobert          ###   ########.fr       */
+/*   Created: 2021/11/14 14:02:00 by ngobert           #+#    #+#             */
+/*   Updated: 2021/11/14 14:14:27 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,29 @@ static int	is_set(char a, char const *set)
 	return (0);
 }
 
+static int	is_all_set(char const *str, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (is_set(str[i], set) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 static int	skip_beg(char const *s1, char const *set)
 {
 	int	i;
 
 	i = 0;
 	while (is_set(s1[i], set) == 1)
+	{
 		i++;
+	}
 	return (i);
 }
 
@@ -59,6 +75,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = skip_beg(s1, set);
 	j = 0;
+	if (is_all_set(s1, set) == 1)
+		return ("");
 	dest = malloc(ft_strlen(s1) - i - skip_end(s1, set) + 1);
 	if (!dest)
 		return (NULL);
