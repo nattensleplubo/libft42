@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 19:20:44 by ngobert           #+#    #+#             */
-/*   Updated: 2021/11/14 15:03:50 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/15 20:34:01 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if (start > ft_strlen(s))
+		return ("");
 	dest = malloc(sizeof(char) * len + 1);
 	if (!dest)
 		return (NULL);
