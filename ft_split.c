@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/10/11 16:13:50 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/15 18:17:10 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 static int	is_c(char c, char charset)
 {
-	int	i;
-
-	i = 0;
-	if (charset == c)
+	if (c == charset)
 		return (1);
 	return (0);
 }
 
-static char	*ft_splitter(int *i, char const *str, int size)
+char	*ft_splitter(int *i, char const *str, int size)
 {
 	int		j;
 	char	*dest;
@@ -41,19 +38,19 @@ static char	*ft_splitter(int *i, char const *str, int size)
 	return (dest);
 }
 
-static int	num_word(char const *s, char c)
+int	num_word(char const *str, char charset)
 {
 	int	i;
 	int	counter;
 
 	i = 0;
 	counter = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (is_c(s[i], c) == 0)
+		if (is_c(str[i], charset) == 0)
 		{
 			counter++;
-			while (is_c(s[i], c) == 0 && s[i])
+			while (str[i] && is_c(str[i], charset) == 0)
 				i++;
 		}
 		else
@@ -62,7 +59,7 @@ static int	num_word(char const *s, char c)
 	return (counter);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char charset)
 {
 	char	**dest;
 	int		i;
@@ -71,16 +68,16 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	dest = malloc(sizeof(char *) * num_word(s, c) + 1);
+	dest = malloc(sizeof(char *) * num_word(s, charset) + 1);
 	if (!dest)
 		return (NULL);
-	dest[num_word(s, c)] = NULL;
+	dest[num_word(s, charset)] = NULL;
 	while (s[i])
 	{
-		if (is_c(s[i], c) == 0)
+		if (is_c(s[i], charset) == 0)
 		{
 			j = 0;
-			while (is_c(s[i + j], c) == 0 && s[i + j])
+			while (s[i + j] && is_c(s[i + j], charset) == 0)
 				j++;
 			dest[k] = ft_splitter(&i, s, j);
 			k++;
@@ -89,4 +86,20 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	return (dest);
+}
+
+int main(void)
+{
+	char	**dest;
+	char	*str;
+
+	str = "         ";
+	dest = ft_split(str, ' ');
+	int i = 0;
+	while (dest[i])
+	{
+		printf("%s\n", dest[i]);
+		i++;
+	}
+	return (0);
 }

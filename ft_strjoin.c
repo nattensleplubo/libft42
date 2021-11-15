@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 19:47:08 by ngobert           #+#    #+#             */
-/*   Updated: 2021/11/03 14:42:41 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/14 17:35:30 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dest[i] = s1[i];
 		i++;
 	}
-	while (s2[i])
+	while (s2[j])
 	{
 		dest[i] = s2[j];
 		i++;
@@ -47,3 +47,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dest[i] = '\0';
 	return (dest);
 }
+
+// a main that will test the previous function
+
+// int	main(void)
+// {
+// 	char	str[] = "Hello ";
+// 	char	str2[] = "World";
+
+// 	printf("%s\n", ft_strjoin(str, str2));
+// }
