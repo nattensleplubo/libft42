@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/11/15 18:22:43 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/22 15:33:16 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char charset)
 
 	i = 0;
 	k = 0;
-	dest = malloc(sizeof(char *) * num_word(s, charset) + 1);
+	dest = malloc(sizeof(char *) * (num_word(s, charset) + 1));
 	if (!dest)
 		return (NULL);
 	dest[num_word(s, charset)] = NULL;
