@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 16:54:01 by ngobert           #+#    #+#             */
-/*   Updated: 2021/11/22 15:33:16 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/24 10:04:03 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,3 @@ char	**ft_split(char const *s, char charset)
 	}
 	return (dest);
 }
-
-// int main(void)
-// {
-// 	char	**dest;
-// 	char	*str;
-
-// 	str = "je mange de la merde.";
-// 	dest = ft_split(str, ' ');
-// 	int i = 0;
-// 	while (dest[i])
-// 	{
-// 		printf("%s\n", dest[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

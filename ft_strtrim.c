@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:02:00 by ngobert           #+#    #+#             */
-/*   Updated: 2021/11/14 14:14:27 by ngobert          ###   ########.fr       */
+/*   Updated: 2021/11/24 10:36:42 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = skip_beg(s1, set);
 	j = 0;
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	if (is_all_set(s1, set) == 1)
-		return ("");
+		return (ft_strdup(""));
 	dest = malloc(ft_strlen(s1) - i - skip_end(s1, set) + 1);
 	if (!dest)
 		return (NULL);
